@@ -1,6 +1,6 @@
 # OAW_TemplateCleaner
 > Detalles:
-> - Versión: **1.3**
+> - Versión: **1.2**
 > - Código: **PowerShell**
 > - Publicado: **10-NOV-2019**
 
