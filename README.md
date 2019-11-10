@@ -12,4 +12,4 @@
 >	- Execute el archivo **"RUN.bat"**.
 >	- Arrastre su Template del la consola.
 >	- Espere hasta que termine, de lo contrario puede causar errores.
->	- De tener algún error/sugerencia/duda comuniquese con [mi creador](jhordy.caceres@outlook.com). para seguir evolucionando.
+>	- De tener algún error/sugerencia/duda comuniquese con mi creador para seguir evolucionando.
