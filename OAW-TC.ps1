@@ -43,7 +43,7 @@
     }
     return $file
 }
-
+$error = ""
 $template = Read-Host "Ingresa la carperta de su Tempalte-PF"
 clear
 $template = $template.Replace('"','')
@@ -84,7 +84,7 @@ $archivos | ForEach-Object -Begin {$progreso = 0} -Process {
 
         elseif($_.BaseName -match '\.eot'){
             $name = $_.BaseName -replace '\.', '.+' -split '\.',2 -notmatch '\+'
-            Rename-Item -Path $_.FullName -NewName "$name.eot"
+            Rename-Item -Path $_.FullName -NewName "$name.eot" -ErrorAction silentlycontinue
         }
 
         elseif($_.BaseName -match '\.ttf'){
@@ -131,7 +131,7 @@ $archivos | ForEach-Object -Begin {$progreso = 0} -Process {
     if ($_.Extension.Equals('.css') -or $_.Extension.Equals('.html'))
     {
         $file = Get-Content $_.FullName -Encoding UTF8
-        $file = $file -replace 'javax.faces.resource','resources'
+        $file = $file -replace 'javax.faces.resource','#{request.contextPath}/faces/resources'
         $extensiones = $file -replace '"','"+' -split '"' -match "\+" -split '/' -split '\.',2  | select -Unique
         $file = fn_redirec -file $file -extensiones $extensiones
         Remove-Item -Path $_.FullName -Force
