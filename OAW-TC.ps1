@@ -43,7 +43,7 @@
     }
     return $file
 }
-$error = ""
+#$error = ""
 $template = Read-Host "Ingresa la carperta de su Tempalte-PF"
 clear
 $template = $template.Replace('"','')
